@@ -9,19 +9,19 @@ const teamMembers = [
     imgUrl: Uyen,
     name: "Uyen Hoang",
     position: "UI/UX Designer",
-    linkedin: "https://www.linkedin.com/in/uyenhoang2903/"
+    linkedin: "https://www.linkedin.com/in/uyenhoang2903/",
   },
   {
     imgUrl: Stephanie,
     name: "Stephanie Ng",
     position: "PM, Front-end & Blockchain Dev",
-    linkedin: "https://www.linkedin.com/in/steph-tien-ng"
+    linkedin: "https://www.linkedin.com/in/steph-tien-ng",
   },
   {
     imgUrl: Christopher,
     name: "Christopher Le",
     position: "Backend & AI Dev",
-    linkedin: "https://www.linkedin.com/in/chrislevn/"
+    linkedin: "https://www.linkedin.com/in/chrislevn/",
   },
 ];
 
@@ -41,7 +41,9 @@ const Features = () => (
               <h4>{item.name}</h4>
               <p className="description">{item.position}</p>
               <a href={item.linkedin} target="_blank" rel="noopener noreferrer">
-                <span style={{ color: "#0077B5", fontStyle: "italic" }}>LinkedIn</span>
+                <span style={{ color: "#0077B5", fontStyle: "italic" }}>
+                  LinkedIn
+                </span>
               </a>
             </div>
           </div>
