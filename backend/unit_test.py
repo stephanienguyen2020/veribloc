@@ -1,7 +1,6 @@
 import pytest
-import psycopg2
-from database import User, Project, Transaction
-from helper import UserInfo
+from database import User, Project, Transaction, Survey
+from objects import UserInfo
 
 
 def test_ping_user_db():
@@ -18,6 +17,9 @@ def test_ping_transaction_db():
     transaction = Transaction()
     assert transaction.ping() == True
 
+def test_ping_survey_db():
+    survey = Survey()
+    assert survey.ping() == True
 
 def test_insert_user():
     user = User()
@@ -34,6 +36,24 @@ def test_insert_user():
 
     user.insert_user(user_info)
     user.delete_user_by_email("john_doe@gmail.com")
+
+def test_create_project():
+    project = Project()
+    fake_project_info = {
+        "title": "Fake Project",
+        "description": "This is a fake project",
+        "owner": "Fake Owner",
+        "members": ["Member 1", "Member 2"],
+        "participants": ["Participant 1", "Participant 2"],
+        "is_active": True,
+        "start_date": None,
+        "end_date": None,
+        "budget": 0.0,
+        "salary": 0.0
+    }
+
+    project.create_project(fake_project_info)
+    project.delete_project_by_name("Fake Project")
 
 
 if __name__ == "__main__":

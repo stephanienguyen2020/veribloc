@@ -110,3 +110,25 @@ class Transaction:
         transactions = self.get_transactions_database()
         return transactions.find({"seller_id": seller_id, "buyer_id": buyer_id, "project_id": project_id})
 
+
+class Survey:
+    def __init__(self):
+        self.client = MongoClient(os.getenv("MONGODB_URI"))
+
+    def ping(self):
+        try:
+            self.client.admin.command("ping")
+            return True
+        except Exception as e:
+            return False
+        
+    def get_surveys_database(self):
+        return self.client["labcoin"]["surveys"]
+    
+    def insert_survey(self, survey):
+        surveys = self.get_surveys_database()
+        surveys.insert_one(survey)
+
+    def get_survey(self, survey_id):
+        surveys = self.get_surveys_database()
+        return surveys.find_one({"survey_id": survey_id})

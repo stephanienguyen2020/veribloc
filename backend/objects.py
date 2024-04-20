@@ -71,3 +71,24 @@ class Transaction:
             "valid_until": self.valid_until,
         }
     
+
+class Survey:
+    def __init__(self, survey_id, user_id, project_id, answers):
+        self.survey_id = survey_id
+        self.user_id = user_id
+        self.project_id = project_id
+        self.answers = answers
+
+    def to_dict(self):
+        return {
+            "survey_id": self.survey_id,
+            "user_id": self.user_id,
+            "project_id": self.project_id,
+            "answers": self.answers,
+        }
+    
+    def __str__(self):
+        return f"Survey ID: {self.survey_id}, User ID: {self.user_id}, Project ID: {self.project_id}, Answers: {self.answers}"
+    
+    def __repr__(self):
+        return f"Survey ID: {self.survey_id}, User ID: {self.user_id}, Project ID: {self.project_id}, Answers: {self.answers}"

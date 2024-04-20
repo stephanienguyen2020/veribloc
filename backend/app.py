@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from database import User, Project, Transaction
-from helper import UserInfo
+from objects import UserInfo
 
 app = FastAPI()
 
