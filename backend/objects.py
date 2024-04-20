@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from datetime import datetime, timedelta
 
 @dataclass
 class UserInfo: 
@@ -55,15 +56,17 @@ class ProjectInfo:
         }
     
 @dataclass
-class Transaction:
+class TransactionInfo:
+    transaction_id: str
     project_id: str
     seller_id: str
     buyer_id: str
     amount: float
-    valid_until: str
+    valid_until: str = (datetime.now() + timedelta(days=30)).strftime("%Y-%m-%d")
 
     def to_dict(self):
         return {
+            "transaction_id": self.transaction_id,
             "project_id": self.project_id,
             "seller_id": self.seller_id,
             "buyer_id": self.buyer_id,
@@ -72,7 +75,7 @@ class Transaction:
         }
     
 
-class Survey:
+class SurveyInfo:
     def __init__(self, survey_id, user_id, project_id, answers):
         self.survey_id = survey_id
         self.user_id = user_id
