@@ -8,10 +8,10 @@ const Possibility = () => (
       <img src={possibilityImage} alt="possibility" />
     </div>
     <div className="vb__possibility-content">
-      <h4>Request Early Access to Get Started</h4>
-      <h1 className="gradient__text">The possibilities are <br /> beyond your imagination</h1>
-      <p>Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
-      <h4>Request Early Access to Get Started</h4>
+      <h4>Join Top Research Institutions Today</h4>
+      <h1 className="gradient__text">Unlock a world of diverse data <br /> and collaborative potential</h1>
+      <p>Discover research opportunities and connect with other researchers worldwide. Explore a curated list of active research studies seeking diverse global contributions, spanning across various fields and cultures.</p>
+      <h4>Verify Your Institution Credentials to Get Started!</h4>
     </div>
   </div>
 );

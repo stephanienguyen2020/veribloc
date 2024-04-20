@@ -1,38 +1,59 @@
-import React from 'react';
-import Feature from '../../components/feature/Feature';
-import './features.css';
+import React from "react";
+import "./features.css";
+import Christopher from "../../assets/team/Christopher.jpg";
+import Uyen from "../../assets/team/Uyen.jpg";
+import Stephanie from "../../assets/team/Stephanie.jpg";
 
-const featuresData = [
+const teamMembers = [
   {
-    title: 'Improving end distrusts instantly',
-    text: 'From they fine john he give of rich he. They age and draw mrs like. Improving end distrusts may instantly was household applauded.',
+    imgUrl: Uyen,
+    name: "Uyen Hoang",
+    position: "UI/UX Designer",
   },
   {
-    title: 'Become the tended active',
-    text: 'Considered sympathize ten uncommonly occasional assistance sufficient not. Letter of on become he tended active enable to.',
+    imgUrl: Stephanie,
+    name: "Stephanie Ng",
+    position: "PM, Front-end & Blockchain Dev",
   },
   {
-    title: 'Message or am nothing',
-    text: 'Led ask possible mistress relation elegance eat likewise debating. By message or am nothing amongst chiefly address.',
-  },
-  {
-    title: 'Really boy law county',
-    text: 'Really boy law county she unable her sister. Feet you off its like like six. Among sex are leave law built now. In built table in an rapid blush..',
+    imgUrl: Christopher,
+    name: "Christopher Le",
+    position: "Backend & AI Dev",
   },
 ];
 
 const Features = () => (
-  <div className="vb__features section__padding" id="features">
-    <div className="vb__features-heading">
-      <h1 className="gradient__text">The Future is Now and You Just Need to Realize It. Step into Future Today. & Make it Happen.</h1>
-      <p>Request Early Access to Get Started</p>
+  <section className="our__team">
+    <div className="container">
+      <div className="team__content">
+        <h1 className="gradient__text">Meet the Team</h1>
+      </div>
+      <div className="team__wrapper">
+        {teamMembers.map((item, index) => (
+          <div className="team__item" key={index}>
+            <div className="team__img">
+              <img src={item.imgUrl} alt={item.name} />
+            </div>
+            <div className="team__details">
+              <h4>{item.name}</h4>
+              <p className="description">{item.position}</p>
+              <div className="team__member-social">
+                <span>
+                  <i className="ri-linkedin-line"></i>
+                </span>
+                <span>
+                  <i className="ri-twitter-line"></i>
+                </span>
+                <span>
+                  <i className="ri-facebook-line"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    <div className="vb__features-container">
-      {featuresData.map((item, index) => (
-        <Feature title={item.title} text={item.text} key={item.title + index} />
-      ))}
-    </div>
-  </div>
+  </section>
 );
 
 export default Features;

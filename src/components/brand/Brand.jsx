@@ -1,23 +1,23 @@
 import React from 'react';
-import { google, slack, atlassian, dropbox, shopify } from './imports';
+import { cornell, harvard, mit, yale, cmu } from './imports';
 import './brand.css';
 
 const Brand = () => (
   <div className="vb__brand section__padding">
     <div>
-      <img src={google} />
+      <img src={cornell} />
     </div>
     <div>
-      <img src={slack} />
+      <img src={harvard} />
     </div>
     <div>
-      <img src={atlassian} />
+      <img src={mit} />
     </div>
     <div>
-      <img src={dropbox} />
+      <img src={yale} />
     </div>
     <div>
-      <img src={shopify} />
+      <img src={cmu} />
     </div>
   </div>
 );

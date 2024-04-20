@@ -8,13 +8,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     margin-right: 2rem;
 }
 
 .vb__possibility-image img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 .vb__possibility-content {
@@ -30,7 +29,7 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 30px;
-    color: #71E5FF;
+    color: #1c1c1c;
 }
 
 .vb__possibility-content h4:last-child {
@@ -80,4 +79,3 @@
         height: 100%;
     }
 }
-

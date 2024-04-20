@@ -1,13 +1,13 @@
-import google from '../../assets/google.png';
-import slack from '../../assets/slack.png';
-import atlassian from '../../assets/atlassian.png';
-import dropbox from '../../assets/dropbox.png';
-import shopify from '../../assets/shopify.png';
+import cornell from '../../assets/cornell.png';
+import harvard from '../../assets/harvard.png';
+import yale from '../../assets/yale.png';
+import cmu from '../../assets/cmu.png';
+import mit from '../../assets/mit.png';
 
 export {
-  google,
-  slack,
-  atlassian,
-  dropbox,
-  shopify,
+  cornell,
+  harvard,
+  yale,
+  cmu,
+  mit,
 };

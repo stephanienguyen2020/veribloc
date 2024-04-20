@@ -6,7 +6,7 @@ import './header.css';
 const Header = () => (
   <div className="vb__header section__padding" id="home">
     <div className="vb__header-content">
-      <h1 className="gradient__text">LabCoin: Bridging Data, Building Trust.</h1>
+      <h1 className="gradient__text">VeriBloc: Bridging Data, Building Trust</h1>
       <p> Your One-Stop Blockchain-Powered Data Exchange Platform for Research Innovation. Connect with diverse data contributors and researchers seamlessly for trusted insights. </p>
 
       <div className="vb__header-content__input">
@@ -16,7 +16,7 @@ const Header = () => (
 
       <div className="vb__header-content__people">
         <img src={people} />
-        <p>Join 3,000,000+ other contributors from 48+ countries </p>
+        <p>Join 1,600,000+ other contributors from 48+ countries </p>
       </div>
     </div>
 
