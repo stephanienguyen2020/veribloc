@@ -3,6 +3,8 @@ import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import logo from '../../assets/veribloc_logo.png';
 import './navbar.css';
 
+import {Link} from 'react-router-dom';
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -13,10 +15,10 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className="vb__navbar-links_container">
-          <p><a href="#home">About Us</a></p>
-          <p><a href="#wvb">Study Listings</a></p>
-          <p><a href="#possibility">Pricing</a></p>
-          <p><a href="#features">Help & Support</a></p>
+          <p><Link to="/about">About Us</Link></p>
+          <p><Link to="/listings">Study Listings</Link></p>
+          <p><Link to="/pricing">Pricing</Link></p>
+          <p><Link to="/support">Help & Support</Link></p>
         </div>
       </div>
       <div className="vb__navbar-sign">
@@ -30,14 +32,14 @@ const Navbar = () => {
         {toggleMenu && (
         <div className="vb__navbar-menu_container scale-up-center">
           <div className="vb__navbar-menu_container-links">
-            <p><a href="#home">About Us</a></p>
-            <p><a href="#wvb">Study Listings</a></p>
-            <p><a href="#possibility">Pricing</a></p>
-            <p><a href="#features">Help & Support</a></p>
+            <p><Link to="/about">About Us</Link></p>
+            <p><Link to="/listings">Study Listings</Link></p>
+            <p><Link to="/pricing">Pricing</Link></p>
+            <p><Link to="/support">Help & Support</Link></p>
           </div>
           <div className="vb__navbar-menu_container-links-sign">
-            <p>Sign in</p>
-            <button type="button">Sign up</button>
+            <Link to="/signin">Sign in</Link>
+            <Link to="/signup"><button type="button">Sign up</button></Link>
           </div>
         </div>
         )}
