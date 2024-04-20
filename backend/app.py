@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from database import User, Project, Transaction
-from objects import UserInfo
+from database import User, Project, Transaction, Survey
+from objects import UserInfo, ProjectInfo, TransactionInfo, SurveyInfo
 
 app = FastAPI()
 
@@ -12,7 +12,7 @@ def read_root():
 def signup(user: UserInfo):
     try:
         db = User()
-        db.insert_user(user.to_dict())
+        db.insert_user(user)
         return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
@@ -30,7 +30,7 @@ def login(email: str, password: str):
         return {"status": "error", "message": str(e)}
     
 @app.post("/create_project")
-def create_project(project: dict):
+def create_project(project: ProjectInfo):
     try:
         db = Project()
         db.insert_project(project)
@@ -38,58 +38,104 @@ def create_project(project: dict):
     except Exception as e:
         return {"status": "error", "message": str(e)}
     
-@app.post("/search_project")
-def search_project(query: dict):
+@app.post("/get_project")
+def get_project(title: str, owner: str):
     try:
         db = Project()
-        projects = db.search_project(query)
+        project = db.get_project(title, owner)
+        return {"status": "success", "project": project}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
+@app.post("/list_my_projects")
+def list_projects(owner_email: str):
+    try:
+        db = Project()
+        projects = db.list_my_projects(owner_email=owner_email)
         return {"status": "success", "projects": projects}
     except Exception as e:
         return {"status": "error", "message": str(e)}
     
-
-@app.post("/update_project")
-def update_project(id: str, project: dict):
+@app.get("/list_public_projects")
+def list_public_projects():
     try:
         db = Project()
-        db.update_project(id, project)
-        return {"status": "success"}
+        projects = db.list_public_projects()
+        return {"status": "success", "projects": projects}
     except Exception as e:
         return {"status": "error", "message": str(e)}
     
-@app.post("/delete_project")
-def delete_project(id: str):
+@app.post("/join_project")
+def join_project(title: str, owner: str, participant_email: str):
     try:
         db = Project()
-        db.delete_project_by_id(id)
+        db.join_project(title, owner, participant_email)
         return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
     
-@app.post("/create_transaction")
-def create_transaction(transaction: dict):
+@app.post("/leave_project")
+def leave_project(title: str, owner: str, participant_email: str):
     try:
-        db = Transaction()
-        db.insert_transaction(transaction)
+        db = Project()
+        db.leave_project(title, owner, participant_email)
         return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
     
-@app.post("/search_transaction")
-def search_transaction(query: dict):
+@app.post("/pay")
+def pay(transaction: TransactionInfo):
     try:
         db = Transaction()
-        transactions = db.search_transaction(query)
-        return {"status": "success", "transactions": transactions}
-    except Exception as e:
-        return {"status": "error", "message": str(e)}
-    
-@app.post("/update_transaction")
-def update_transaction(id: str, transaction: dict):
-    try:
-        db = Transaction()
-        db.update_transaction(id, transaction)
+        db.pay(transaction)
         return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+    
+@app.post("/send_survey")
+def send_survey(survey: SurveyInfo):
+    try:
+        db = Survey()
+        db.send_survey(survey)
+        return {"status": "success"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
+@app.get("/get_survey")
+def get_survey(seller_id: str, buyer_id: str, project_id: str):
+    try:
+        db = Survey()
+        survey = db.get_survey(seller_id, buyer_id, project_id)
+        return {"status": "success", "survey": survey}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
+@app.post("/answer_survey")
+def answer_survey(survey: SurveyInfo):
+    try:
+        db = Survey()
+        db.answer_survey(survey)
+        return {"status": "success"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
 
+@app.post("/verify_survey")
+def verify_survey(survey: SurveyInfo):
+    try:
+        db = Survey()
+        db.verify_survey(survey)
+        return {"status": "success"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
+
+@app.post("/give_feedback")
+def give_feedback(survey: SurveyInfo):
+    try:
+        db = Survey()
+        db.give_feedback(survey)
+        return {"status": "success"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+    
