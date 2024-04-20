@@ -1,27 +1,27 @@
 import React from 'react';
 import people from '../../assets/people.png';
-import ai from '../../assets/ai.png';
+import header_logo from '../../assets/header_logo.png';
 import './header.css';
 
 const Header = () => (
-  <div className="gpt3__header section__padding" id="home">
-    <div className="gpt3__header-content">
-      <h1 className="gradient__text">Let&apos;s Build Something amazing with GPT-3 OpenAI</h1>
-      <p>Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all exercise blessing. Indulgence way everything joy alteration boisterous the attachment. Party we years to order allow asked of.</p>
+  <div className="vb__header section__padding" id="home">
+    <div className="vb__header-content">
+      <h1 className="gradient__text">LabCoin: Bridging Data, Building Trust.</h1>
+      <p> Your One-Stop Blockchain-Powered Data Exchange Platform for Research Innovation. Connect with diverse data contributors and researchers seamlessly for trusted insights. </p>
 
-      <div className="gpt3__header-content__input">
+      <div className="vb__header-content__input">
         <input type="email" placeholder="Your Email Address" />
         <button type="button">Get Started</button>
       </div>
 
-      <div className="gpt3__header-content__people">
+      <div className="vb__header-content__people">
         <img src={people} />
-        <p>1,600 people requested access a visit in last 24 hours</p>
+        <p>Join 3,000,000+ other contributors from 48+ countries </p>
       </div>
     </div>
 
-    <div className="gpt3__header-image">
-      <img src={ai} />
+    <div className="vb__header-image">
+      <img src={header_logo} />
     </div>
   </div>
 );
