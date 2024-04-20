@@ -1,0 +1,6 @@
+fastapi==0.110.2
+psycopg2==2.9.9
+psycopg2_binary==2.9.6
+pymongo[srv]
+pytest==7.0.1
+python-dotenv==1.0.1
