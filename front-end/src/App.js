@@ -3,11 +3,12 @@ import { Footer, Possibility, Features, Whatvb, Header } from "./containers";
 import Navbar from "./components/navbar/Navbar";
 import LoginForm from './components/loginform/LoginForm';
 import { CTA, Brand } from "./components";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
 const App = () => (
+  <BrowserRouter>
     <div className="App">
       <Navbar />
       <Routes>
@@ -23,6 +24,7 @@ const App = () => (
       <CTA />
       <Footer />
     </div>
+  </BrowserRouter>
 );
 
 export default App;
