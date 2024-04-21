@@ -1,0 +1,3 @@
+[submodule "veribloc"]
+	path = veribloc
+	url = https://github.com/stephanienguyen2020/veribloc
