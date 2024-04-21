@@ -22,8 +22,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="vb__navbar-sign">
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+          <p><Link to="/signin">Sign in</Link></p>
+          <button type="button"><Link to="/signup">Sign up</Link></button>
       </div>
       <div className="vb__navbar-menu">
         {toggleMenu
