@@ -314,7 +314,7 @@ export const SalesValueWidget = (props) => {
           </h5>
           <h3>${value}</h3>
           <small className="fw-bold mt-2">
-            <span className="me-2">Yesterday</span>
+            <span className="me-2">This Week</span>
             <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} />
             <span className={percentageColor}>
               {percentage}%
